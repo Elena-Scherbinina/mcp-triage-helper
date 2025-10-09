@@ -1,6 +1,10 @@
 # Virtual environment
 .venv/
 
+.env/
+
+archive_test_mcp_client.py
+
 # Python cache
 __pycache__/
 *.pyo
