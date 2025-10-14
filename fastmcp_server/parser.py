@@ -9,11 +9,14 @@ def find_error(error_lst, error_type, error_desc):
                
                
 
-def parse_log(path):
+def parse_log(path, max_lines = 200):
     error_lst = []
     result = {"errors": error_lst}
-    with open(path, "r") as f:
-        for line in f:
+    try:
+
+        with open(path, "r") as f:
+         lines = f.readlines()[-max_lines:]
+         for line in lines:
             error_lst = result.get("errors", [])
             if 'ERROR' in line:
                 parts = line.split("ERROR", 1)  # only split once
@@ -25,7 +28,7 @@ def parse_log(path):
                     error_desc = words[1]
                 else:
                     error_desc = ""
-                    
+
                 error_exist = find_error(error_lst, error_type, error_desc)
                 if not error_exist:  
                     # make a new dict each time
@@ -36,8 +39,11 @@ def parse_log(path):
                     }
                     error_lst.append(error_dict)
 
-        return result             
+        return result 
+    except Exception as e:
+        return{"error" : str(e)}
+                
 
 
-#path = "./logs/sample.log"  
-#parse_log(path)   
+path = "./logs/sample.log"  
+print(parse_log(path))   

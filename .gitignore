@@ -16,4 +16,5 @@ __pycache__/
 
 # Logs
 logs/
-*.log
+!logs/sample.log
+!logs/sample_small.log

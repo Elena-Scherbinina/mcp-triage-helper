@@ -1,0 +1,13 @@
+# Core MCP framework
+fastmcp>=2.12.0
+
+# Hugging Face client with MCP integration
+huggingface_hub[mcp]>=0.32.0
+
+# REST API support
+fastapi>=0.110.0
+uvicorn>=0.30.0
+
+# Async HTTP and validation dependencies (used internally)
+httpx>=0.27.0
+pydantic>=2.11.0
