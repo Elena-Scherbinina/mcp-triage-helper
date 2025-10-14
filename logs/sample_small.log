@@ -1,0 +1,6 @@
+2025-09-26 09:00:01,012 INFO  Starting Payment Service...
+2025-09-26 09:00:02,433 INFO  Health check passed
+2025-09-26 09:00:03,004 INFO  User login: user=asmith
+2025-09-26 09:00:04,789 ERROR java.net.SocketTimeoutException: Read timed out contacting Inventory API
+2025-09-26 09:00:05,111 INFO  Retry attempt #1
+2025-09-26 09:00:06,222 INFO  Request completed

@@ -1,0 +1,11 @@
+2025-09-25 10:15:32,101 INFO  Starting Retail App Service...
+2025-09-25 10:15:33,542 INFO  User login attempt: user=jdoe
+2025-09-25 10:15:34,008 WARN  Response time threshold exceeded for API /checkout
+2025-09-25 10:15:34,675 ERROR java.sql.SQLTimeoutException: Timeout waiting for connection from pool
+2025-09-25 10:15:34,676 ERROR com.retailapp.db.ConnectionManager - Failed to connect to database
+2025-09-25 10:15:35,120 INFO  Retrying connection (attempt 1 of 3)...
+2025-09-25 10:15:37,992 ERROR NullPointerException at com.retailapp.orders.OrderService.processOrder(OrderService.java:87)
+2025-09-25 10:15:38,112 INFO  Order request received: orderId=12345
+2025-09-25 10:15:38,950 ERROR java.net.ConnectException: Connection refused to service PaymentGateway
+2025-09-25 10:15:40,203 INFO  Health check completed: status=DEGRADED
+2025-09-25 10:15:42,950 ERROR java.net.ConnectException: Connection refused to service PaymentGateway(retry)
