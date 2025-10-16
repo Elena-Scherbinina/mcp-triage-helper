@@ -7,6 +7,8 @@ to assist QA engineers in log triage.
 - Hugging Face MCP server (LLaMA 3.1) will analyze the parsed errors.
 - MCP Host will coordinate the flow and return root causes with suggested QA steps.
 
+🧪 This project demonstrates how AI can assist QA engineers by parsing real-world logs and automatically generating triage insights.
+
 
 ## 📦 Installation
 
@@ -28,7 +30,6 @@ pip install fastmcp "huggingface_hub[mcp]" uvicorn fastapi
 ```
 
 
-```bash
 
 ## Quick Overview
 
@@ -43,30 +44,28 @@ pip install fastmcp "huggingface_hub[mcp]" uvicorn fastapi
 
 
 ## 📁 Project Structure
-
+```text
 mcp-triage-helper/
 ├── fastmcp_server/
-│   ├── parser.py         ← Parses log files and extracts structured error data (types, counts, examples)
-│   └── server.py         ← Runs both the FastMCP and REST servers (entry point for the backend)
+│   ├── parser.py         ← Parses log files and extracts error data
+│   └── server.py         ← Runs both the FastMCP and REST servers
 │
 ├── logs/
-│   ├── sample.log        ← Example log file with mixed INFO/WARN/ERROR messages for testing
-│   └── sample_small.log  ← Smaller test log with a single error, used for quick verification
+│   ├── sample.log        ← Example log file with mixed INFO/WARN/ERROR messages
+│   └── sample_small.log  ← Smaller test log for quick verification
 │
 ├── scripts/
-│   └── run_py.sh         ← Shell script to start the Hugging Face MCP host and load config.json
+│   └── run_py.sh         ← Start the Hugging Face MCP host and load config.json
 │
-├── config.json           ← Configuration file that connects your local FastMCP server to Hugging Face MCP
+├── config.json           ← Configuration file - connects local FastMCP server to Hugging Face MCP
 │
-├── requirements.txt      ← Lists all Python dependencies (FastMCP, FastAPI, huggingface_hub, etc.)
+├── requirements.txt      ← Lists all Python dependencies 
 │
-├── .gitignore            ← Excludes local files (e.g., .env, venv, logs) from being committed to Git
+├── .gitignore            ← Excludes local files (.env, venv, logs) from being committed to Git
 │
-└── README.md             ← Main project documentation (overview, setup, architecture, and usage)
-
+└── README.md             ← documentation
 
 ```
-
 
 
 
@@ -191,7 +190,6 @@ Suggested fixes:
 
 ## 🧭 Next Steps
 
-- 🤝 Integrate LLaMA 3.1 or Claude for AI-based triage suggestions
-- 🪄 Add a UI (Streamlit or Gradio) for interactive analysis
-- 📦 Package as a reusable QA assistant tool
+- 🤝 Future enhancements may include richer error context, multi-step analysis, and a simple web UI.
+
 

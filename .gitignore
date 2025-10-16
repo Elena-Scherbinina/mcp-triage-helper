@@ -15,6 +15,6 @@ __pycache__/
 .vscode
 
 # Logs
-logs/
 !logs/sample.log
 !logs/sample_small.log
+logs/
